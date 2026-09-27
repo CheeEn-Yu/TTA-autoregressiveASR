@@ -1,0 +1,37 @@
+# Paper Section 4.3: Whisper-base, episodic LayerNorm adaptation.
+asr: openai/whisper-base
+strategy: baseline
+task: transcribe
+dataset_name: librispeechc
+dataset_dir: ???
+lang: en
+asr_lang: en
+noise_dir: null
+snr: 10
+exp_name: null
+seed: 42
+num_data: false
+
+tta: true
+suta_method: rb
+sampling_strategy: random
+num_samples: 16
+rb_mode: none
+steps: 10
+opt: AdamW
+lr: 0.001
+scheduler: null
+t_max: 10
+lr_min: 0.0
+objective_f: [e_loss]
+temp: 1.0
+topk: false
+
+# Kept for compatibility with the table launchers; main.py uses batch_size=1
+# and from_pretrained(..., device_map='auto'), and does not use W&B.
+batch_size: 1
+device: cuda
+use_wandb: false
+hydra:
+  job:
+    chdir: false

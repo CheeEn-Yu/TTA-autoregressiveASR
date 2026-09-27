@@ -1,0 +1,16 @@
+torch
+transformers
+datasets==2.16.1
+pandas
+jiwer
+torchaudio
+soundfile
+openai-whisper
+omegaconf
+hydra-core
+matplotlib
+evaluate
+nltk
+librosa
+accelerate
+webdataset
